@@ -15,7 +15,7 @@ The backend service is implemented using FastAPI.
 To pull the backend Docker image, run the following command:
 
 ```sh
-docker pull jipelski/sensor_stream-backend:latest
+docker pull jipelski/data-stream-backend:latest
 ```
 
 #### Running the Docker Container
@@ -23,7 +23,7 @@ docker pull jipelski/sensor_stream-backend:latest
 To run the backend Docker container, use the following command:
 
 ```sh
-docker run -d --name backend -p 8000:8000 jipelski/sensor_stream-backend:latest
+docker run -d --name backend -p 8000:8000 jipelski/data-stream-backend:latest
 ```
 
 ### Frontend Service
@@ -43,7 +43,7 @@ docker pull jipelski/sensor_stream-frontend:latest
 To run the frontend Docker container, use the following command:
 
 ```sh
-docker run -d --name frontend -p 3000:3000 jipelski/sensor_stream-frontend:latest
+docker run -d --name frontend -p 3000:3000 jipelski/data-stream-frontend:latest
 ```
 
 ### Gateway Service
@@ -55,7 +55,7 @@ The gateway service is used to simulate data ingestion.
 To pull the gateway Docker image, run the following command:
 
 ```sh
-docker pull jipelski/sensor_stream-gateway:latest
+docker pull jipelski/data-stream-mock:latest
 ```
 
 #### Running the Docker Container
@@ -63,7 +63,7 @@ docker pull jipelski/sensor_stream-gateway:latest
 To run the gateway Docker container, use the following command:
 
 ```sh
-docker run -d --name gateway jipelski/sensor_stream-gateway:latest
+docker run -d --name gateway jipelski/data-stream-mock:latest
 ```
 
 ## Running the Full Stack Application with Docker Compose
@@ -73,13 +73,13 @@ To run the full stack application using Docker Compose, follow these steps:
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/jipelski/sensor_stream.git
+    git clone https://github.com/jipelski/data_stream.git
     ```
 
 2. Navigate to the project directory:
 
     ```sh
-    cd sensor_stream
+    cd data_stream
     ```
     
 3. Run Docker Compose to start all services:
@@ -95,13 +95,13 @@ To set up the development environment locally, follow these steps:
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/jipelski/sensor_stream.git
+    git clone https://github.com/jipelski/data_stream.git
     ```
 
 2. Navigate to the project directory:
 
     ```sh
-    cd sensor_stream
+    cd data_stream
     ```
 
 3. Follow the instructions in each service's directory to set up the local environment.
