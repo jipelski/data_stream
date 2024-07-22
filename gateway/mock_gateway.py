@@ -3,10 +3,14 @@ import websockets
 import json
 import random
 from datetime import datetime
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 async def send_sensor_data():
-    uri = "ws://backend:8000/ws/add_data"
+    uri = os.getenv("WEBSOCKET_URI", "ws://localhost:8000/ws/add_data")
 
     async with websockets.connect(uri) as websocket:
         while True:

@@ -1,6 +1,6 @@
-# Sensor Data Streaming Project
+# Data Streaming Project
 
-This repository contains the full stack application for streaming sensor data using React (frontend), FastAPI (backend), and a gateway service to simulate data ingestion.
+This repository contains the full stack application for streaming data using React (frontend), FastAPI (backend), and a gateway service to simulate data ingestion.
 
 ## Docker Images
 

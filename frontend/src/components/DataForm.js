@@ -11,7 +11,7 @@ const DataForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.get('http://localhost:8000/get_all', {
+            const response = await axios.get('${process.env.REACT_APP_API_URL_GET}', {
                 params: {
                     sensor_id: sensorId || undefined,
                     location: location || undefined,

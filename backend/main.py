@@ -1,20 +1,17 @@
-from typing import List
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from models import SessionLocal, Base, engine, SensorData
 import crud
-import schemas
 from datetime import datetime
 from pydantic import BaseModel
+import os
 
 app = FastAPI()
 
 Base.metadata.create_all(bind=engine)
 
-origins = [
-    "http://localhost:3000"  # React frontend
-]
+origins = os.getenv("ORIGINS", "").split(",")
 
 app.add_middleware(
     CORSMiddleware,
@@ -33,7 +30,7 @@ def get_db():
         db.close()
 
 
-class SensorDataRequest(BaseModel):
+class DataRequest(BaseModel):
     sensor_id: str
     location: str
     value: float
